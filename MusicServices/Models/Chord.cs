@@ -43,6 +43,15 @@ namespace MusicServices.Models
                    ChordType.Equals(other.ChordType, StringComparison.OrdinalIgnoreCase);
         }
 
+        public override bool Equals(object? obj)
+        {
+            if (obj is Chord otherChord)
+            {
+                return Equals(otherChord);
+            }
+            return false;
+        }
+
         public override int GetHashCode()
         {
             // Use a simple hash code combining the root note and chord type
