@@ -7,9 +7,12 @@ using MusicServices.Models;
 
 IMusicTheoryHelper musicTheoryHelper = new MusicTheoryHelper();
 IScaleBuilder  scaleBuilder = new ScaleBuilder(musicTheoryHelper);
+IChordBuilder chordBuilder = new ChordBuilder(musicTheoryHelper);
 IHarmonizer harmonizer = new Harmonizer(musicTheoryHelper);
 
-Scale scale = scaleBuilder.CreateScaleByType("G", ScaleTypeEnum.Minor);
+Chord cMajor = chordBuilder.CreateChordFromSignature("C", new List<int> { 0, 4, 3 });
+
+// Scale scale = scaleBuilder.CreateScaleByType("G", ScaleTypeEnum.Minor);
 
 //List<Chord> harmonizerChords = harmonizer.HarmonizeScale(scale);
 
@@ -18,10 +21,10 @@ Scale scale = scaleBuilder.CreateScaleByType("G", ScaleTypeEnum.Minor);
 //    Console.WriteLine(chord);
 //}
 
-ScaleClassData scaleClassData = new ScaleClassData();
-List<Chord> testDataGMinorChords = scaleClassData.GetGMinorHarmonyChords();
+//ScaleClassData scaleClassData = new ScaleClassData();
+//List<Chord> testDataGMinorChords = scaleClassData.GetGMinorHarmonyChords();
 
-foreach (var chord in testDataGMinorChords)
-{
-    Console.WriteLine(chord);
-}
+//foreach (var chord in testDataGMinorChords)
+//{
+//    Console.WriteLine(chord);
+//}

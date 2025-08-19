@@ -3,6 +3,7 @@ using MusicServices.DataStructures;
 using MusicServices.Enums;
 using MusicServices.Models;
 using MusicServices.Utility;
+using System.Xml.Linq;
 
 namespace MusicServices.Builders
 {
@@ -44,12 +45,14 @@ namespace MusicServices.Builders
             MusicWheel wheel = new MusicWheel(rootNoteName);
 
             Chord chord = new Chord() { RootNoteName = rootNoteName };
+            Console.WriteLine($"ChordBuilder.CreateChordFromSignature: Creaded chord with root note name {rootNoteName}...");
             int position = 0;
             for (int i = 0; i < chordSignature.Count; i++)
             {
                 position += chordSignature[i];
                 MusicNode? node = wheel.GetNodeAtSemitoneInterval(wheel.First!, position);
                 if (node is not null) chord.ChordNotes.Add(new ChordNote() { Interval = node.Interval, Note = node.Note });
+                Console.WriteLine($" --- ChordBuilder.CreateChordFromSignature: Added ChordNote with note name {node?.Note.Name} as interval {node.Interval.Symbol}");
             }
 
             return chord;

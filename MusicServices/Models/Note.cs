@@ -1,6 +1,6 @@
 ﻿namespace MusicServices.Models
 {
-    public class Note
+    public class Note : IComparable<Note>, IEquatable<Note>
     {
         public string Name { get; set; } = default!;
         public int Position { get; set; }
@@ -10,5 +10,36 @@
         {
             return $"Note Name: {Name}, Position: {Position}";
         }
+
+        public int CompareTo(Note? other)
+        {
+            if (other is null) return 1;
+            return Name.CompareTo(other.Name);
+        }
+
+        public bool Equals(Note? other)
+        {
+            if (other is null) return false;
+            return Name == other.Name;
+        }
+
+        public override bool Equals(object? obj)
+        {
+            if (obj is Note note)
+            {
+                return Equals(note);
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Name);
+        }
+
+        public static bool operator < (Note left, Note right) => left.CompareTo(right) < 0;
+        public static bool operator > (Note left, Note right) => left.CompareTo(right) > 0;
+        public static bool operator <= (Note left, Note right) => left.CompareTo(right) <= 0;
+        public static bool operator >= (Note left, Note right) => left.CompareTo(right) >= 0;
     }
 }

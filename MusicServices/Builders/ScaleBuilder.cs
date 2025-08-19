@@ -20,7 +20,6 @@ namespace MusicServices.Builders
             _theoryHelper = theoryHelper;
         }
 
-
         public Scale CreateScaleByType(string rootNoteName, ScaleTypeEnum scaleType)
         {
             List<int> scaleSignature = _theoryHelper.GetScaleSignature(scaleType);
