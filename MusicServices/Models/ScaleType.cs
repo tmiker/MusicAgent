@@ -1,16 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace MusicServices.Utility
+﻿namespace MusicServices.Models
 {
     public class ScaleType
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Display(Name = "ScaleType")]
         public int Id { get; set; }
-
-        [Required]
-        [Display(Name = "Name")]
         public string? Name { get; set; }
 
         public string? Symbol { get; set; }
