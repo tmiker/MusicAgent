@@ -1,4 +1,6 @@
-﻿namespace MusicServices.Models
+﻿using System.Text;
+
+namespace MusicServices.Models
 {
     public class Harmony
     {
@@ -8,5 +10,7 @@
         public string Name { get; set; } = default!;
         public string Signature { get; set; } = default!;
         public ICollection<Chord> Chords { get; set; } = new List<Chord>();
+
+        
     }
 }

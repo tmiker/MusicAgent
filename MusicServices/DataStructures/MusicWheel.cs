@@ -28,6 +28,7 @@ namespace MusicServices.DataStructures
             for (int i = 0; i < noteListFromRoot.Count; i++)
             {
                 MusicNode node = new MusicNode() { Interval = intervalList[i], Note = noteListFromRoot[i] };
+                node.Note.Position = i; // Reset the position of the note in the wheel based on root note
                 AddNode(node);
             }
             sw.Stop();

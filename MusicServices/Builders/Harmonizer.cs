@@ -50,8 +50,8 @@ namespace MusicServices.Builders
 
             // initailize first chord and add first chord note which is the chord root
             Chord chord = new Chord() { RootNoteName = currentNode.Note.Name };
-            chord.ChordNotes.Add(new ChordNote() { Interval = currentNode.Interval, Note = currentNode.Note });
-
+            chord.ChordNotes.Add(new ChordNote() { Interval = currentNode.Interval, Note = currentNode.Note }); // NEED TO CLONE NOTE HERE TO KEEP POSITION VALUE PER CHORDNOTE
+            Console.WriteLine($"Added chord to harmony with Root Note {currentNode.Note.Name} at Position {currentNode.Note.Position}.");
             // add 3 more chord notes by stacking thirds for which the note is in the scale
             for (int i = 0; i < 3; i++)
             {

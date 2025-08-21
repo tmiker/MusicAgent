@@ -2,9 +2,11 @@
 {
     public class Note : IComparable<Note>, IEquatable<Note>
     {
+        public int Id { get; set; }
         public string Name { get; set; } = default!;
-        public int Position { get; set; }
-        // public double Frequency { get; set; }
+        public int Position { get; set; }  // Position from root in a scale or chord
+
+        public Note Clone() => new Note() { Id = Id, Name = Name, Position = Position };
 
         public override string ToString()
         {

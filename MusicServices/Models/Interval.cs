@@ -2,11 +2,13 @@
 {
     public class Interval : IComparable<Interval>, IEquatable<Interval>
     {
-        public string Name { get; set; } = default!;
-        public int SemiTones { get; set; }
-        public string? FullName { get; set; }
-        public string? Symbol { get; set; }
-        public string? Degree { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; } = default!;    // e.g. "1st"
+        public int SemiTones { get; set; }              // e.g. 0
+        public string? FullName { get; set; }           // e.g. "Unison"
+        public string? Symbol { get; set; }             // e.g. "I"
+        public string? Degree { get; set; }             // e.g. "Tonic"
+        public string? Sound { get; set; }              // e.g. "Open Consonance"
 
         public override string ToString()
         {

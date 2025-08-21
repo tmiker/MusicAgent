@@ -10,9 +10,9 @@ namespace MusicServices
             // object array should contain the following: wheel root note, expected next minor third note from last advanced node
             IEnumerable<object[]> data = new List<object[]>()
             {
-                new object[] { "C", "D#" },
+                new object[] { "C", "D# / Eb" },
                 new object[] { "E", "G" },
-                new object[] { "G", "A#" },
+                new object[] { "G", "A# / Bb" },
                 new object[] { "A", "C" }
             };
 
@@ -25,9 +25,9 @@ namespace MusicServices
             IEnumerable<object[]> data = new List<object[]>()
             {
                 new object[] { "C", "E" },
-                new object[] { "E", "G#" },
-                new object[] { "G", "B#" },
-                new object[] { "A", "C#" }
+                new object[] { "E", "G# / Ab" },
+                new object[] { "G", "B" },
+                new object[] { "A", "C# / Db" }
             };
 
             return data.Take(instancesToReturn);
@@ -47,7 +47,7 @@ namespace MusicServices
             // Assert
             Assert.NotNull(currentNode);
             Assert.Equal(rootNote, currentNode.Note.Name);
-            Assert.Equal("C#", currentNode.Next!.Note.Name);
+            Assert.Equal("C# / Db", currentNode.Next!.Note.Name);
 
             for (int i = 1; i < 12; i++)
             {

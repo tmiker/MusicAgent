@@ -14,6 +14,7 @@ namespace MusicServices
         [ClassData(typeof(ScaleClassData))]
         public void HarmonizeScale_IsDiatonicScale_ReturnsCorrectChords(Scale diatonicScale, List<Chord> expectedChords)
         {
+            // FAILING: EXPECTED CHORDS HAVE NO INTERVAL NAME
             // Arrange
             int expectedChordCount = 7;
             var mockTheoryHelper = new Mock<IMusicTheoryHelper>();
