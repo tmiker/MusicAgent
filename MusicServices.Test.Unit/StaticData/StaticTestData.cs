@@ -221,10 +221,10 @@ namespace MusicServices.StaticData
                     Name = "Major Harmony 1", RootNoteName =  "C", ChordType = "Major Seventh",
                     ChordNotes = new List<ChordNote>()
                     {
-                        new ChordNote() { Interval = new Interval() { Name = "1st", FullName = "Unison", SemiTones = 0, Symbol = "I" }, Note = new Note() { Name = "C", Position = 1 } },
-                        new ChordNote() { Interval = new Interval() { Name = "3rd", FullName = "Major Third", SemiTones = 4, Symbol = "III" }, Note = new Note() { Name = "E", Position = 5 } },
-                        new ChordNote() { Interval = new Interval() { Name = "5th", FullName = "Perfect Fifth", SemiTones = 7, Symbol = "V" }, Note = new Note() { Name = "G", Position = 8 } },
-                        new ChordNote() { Interval = new Interval() { Name = "7th", FullName = "Major Seventh", SemiTones = 11, Symbol = "VII" }, Note = new Note() { Name = "B", Position = 0 } }
+                        new ChordNote() { Interval = new Interval() { Name = "1st", FullName = "Unison", SemiTones = 0, Symbol = "I" }, Note = new Note() { Name = "C", Position = 0 } },
+                        new ChordNote() { Interval = new Interval() { Name = "3rd", FullName = "Major Third", SemiTones = 4, Symbol = "III" }, Note = new Note() { Name = "E", Position = 4 } },
+                        new ChordNote() { Interval = new Interval() { Name = "5th", FullName = "Perfect Fifth", SemiTones = 7, Symbol = "V" }, Note = new Note() { Name = "G", Position = 7 } },
+                        new ChordNote() { Interval = new Interval() { Name = "7th", FullName = "Major Seventh", SemiTones = 11, Symbol = "VII" }, Note = new Note() { Name = "B", Position = 11 } }
                     }
                 },
                 new Chord()
@@ -232,20 +232,20 @@ namespace MusicServices.StaticData
                     Name = "Major Harmony 2", RootNoteName = "D", ChordType = "Minor Seventh",
                     ChordNotes = new List<ChordNote>()
                     {
-                        new ChordNote() { Interval = new Interval() { Name = "1st", FullName = "Unison", SemiTones = 0, Symbol = "I" }, Note = new Note() { Name = "D", Position = 3 } },
-                        new ChordNote() { Interval = new Interval() { Name = "b 3rd", FullName = "Minor Third", SemiTones = 3, Symbol = "iii" }, Note = new Note() { Name = "F", Position = 6 } },
-                        new ChordNote() { Interval = new Interval() { Name = "5th", FullName = "Perfect Fifth", SemiTones = 7, Symbol = "V" }, Note = new Note() { Name = "A", Position = 10 } },
-                        new ChordNote() { Interval = new Interval() { Name = "b 7th", FullName = "Minor Seventh", SemiTones = 10, Symbol = "vii" }, Note = new Note() { Name = "C", Position = 1 } }
+                        new ChordNote() { Interval = new Interval() { Name = "1st", FullName = "Unison", SemiTones = 0, Symbol = "I" }, Note = new Note() { Name = "D", Position = 0 } },
+                        new ChordNote() { Interval = new Interval() { Name = "b 3rd", FullName = "Minor Third", SemiTones = 3, Symbol = "iii" }, Note = new Note() { Name = "F", Position = 3 } },
+                        new ChordNote() { Interval = new Interval() { Name = "5th", FullName = "Perfect Fifth", SemiTones = 7, Symbol = "V" }, Note = new Note() { Name = "A", Position = 7 } },
+                        new ChordNote() { Interval = new Interval() { Name = "b 7th", FullName = "Minor Seventh", SemiTones = 10, Symbol = "vii" }, Note = new Note() { Name = "C", Position = 10 } }
                     }
                 },
                 new Chord()
                 {
                     Name = "Major Harmony 3", RootNoteName = "E", ChordType = "Minor Seventh",
                     ChordNotes = new List<ChordNote>()
-                    {   new ChordNote() { Interval = new Interval() { Name = "1st", FullName = "Unison", SemiTones = 0, Symbol = "I" }, Note = new Note() { Name = "E", Position = 5 } },
-                        new ChordNote() { Interval = new Interval() { Name = "b 3rd", FullName = "Minor Third", SemiTones = 3, Symbol = "iii" }, Note = new Note() { Name = "G", Position = 8 } },
-                        new ChordNote() { Interval = new Interval() { Name = "5th", FullName = "Perfect Fifth", SemiTones = 7, Symbol = "V" }, Note = new Note() { Name = "B", Position = 0 } },
-                        new ChordNote() { Interval = new Interval() { Name = "b 7th", FullName = "Minor Seventh", SemiTones = 10, Symbol = "vii" }, Note = new Note() { Name = "D", Position = 3 } }
+                    {   new ChordNote() { Interval = new Interval() { Name = "1st", FullName = "Unison", SemiTones = 0, Symbol = "I" }, Note = new Note() { Name = "E", Position = 0 } },
+                        new ChordNote() { Interval = new Interval() { Name = "b 3rd", FullName = "Minor Third", SemiTones = 3, Symbol = "iii" }, Note = new Note() { Name = "G", Position = 3 } },
+                        new ChordNote() { Interval = new Interval() { Name = "5th", FullName = "Perfect Fifth", SemiTones = 7, Symbol = "V" }, Note = new Note() { Name = "B", Position = 7 } },
+                        new ChordNote() { Interval = new Interval() { Name = "b 7th", FullName = "Minor Seventh", SemiTones = 10, Symbol = "vii" }, Note = new Note() { Name = "D", Position = 10 } }
                     }
                 },
                 new Chord()
@@ -253,10 +253,10 @@ namespace MusicServices.StaticData
                     Name = "Major Harmony 4", RootNoteName = "F", ChordType = "Major Seventh",
                     ChordNotes = new List<ChordNote>()
                     {
-                        new ChordNote() { Interval = new Interval() { Name = "1st", FullName = "Unison", SemiTones = 0, Symbol = "I" }, Note = new Note() { Name = "F", Position = 6 } },
-                        new ChordNote() { Interval = new Interval() { Name = "3rd", FullName = "Major Third", SemiTones = 4, Symbol = "III" }, Note = new Note() { Name = "A", Position = 10 } },
-                        new ChordNote() { Interval = new Interval() { Name = "5th", FullName = "Perfect Fifth", SemiTones = 7, Symbol = "V" }, Note = new Note() { Name = "C", Position = 1 } },
-                        new ChordNote() { Interval = new Interval() { Name = "7th", FullName = "Major Seventh", SemiTones = 11, Symbol = "VII" }, Note = new Note() { Name = "E", Position = 5 } }
+                        new ChordNote() { Interval = new Interval() { Name = "1st", FullName = "Unison", SemiTones = 0, Symbol = "I" }, Note = new Note() { Name = "F", Position = 0 } },
+                        new ChordNote() { Interval = new Interval() { Name = "3rd", FullName = "Major Third", SemiTones = 4, Symbol = "III" }, Note = new Note() { Name = "A", Position = 4 } },
+                        new ChordNote() { Interval = new Interval() { Name = "5th", FullName = "Perfect Fifth", SemiTones = 7, Symbol = "V" }, Note = new Note() { Name = "C", Position = 7 } },
+                        new ChordNote() { Interval = new Interval() { Name = "7th", FullName = "Major Seventh", SemiTones = 11, Symbol = "VII" }, Note = new Note() { Name = "E", Position = 11 } }
                     }
                 },
                 new Chord()
@@ -264,10 +264,10 @@ namespace MusicServices.StaticData
                     Name = "Major Harmony 5", RootNoteName = "G", ChordType = "Dominant Seventh",
                     ChordNotes = new List<ChordNote>()
                     {
-                        new ChordNote() { Interval = new Interval() { Name = "1st", FullName = "Unison", SemiTones = 0, Symbol = "I" }, Note = new Note() { Name = "G", Position = 8 } },
-                        new ChordNote() { Interval = new Interval() { Name = "3rd", FullName = "Major Third", SemiTones = 4, Symbol = "III" }, Note = new Note() { Name = "B", Position = 0 } },
-                        new ChordNote() { Interval = new Interval() { Name = "5th", FullName = "Perfect Fifth", SemiTones = 7, Symbol = "V" }, Note = new Note() { Name = "D", Position = 3 } },
-                        new ChordNote() { Interval = new Interval() { Name = "b 7th", FullName = "Minor Seventh", SemiTones = 10, Symbol = "vii" }, Note = new Note() { Name = "F", Position = 6 } }
+                        new ChordNote() { Interval = new Interval() { Name = "1st", FullName = "Unison", SemiTones = 0, Symbol = "I" }, Note = new Note() { Name = "G", Position = 0 } },
+                        new ChordNote() { Interval = new Interval() { Name = "3rd", FullName = "Major Third", SemiTones = 4, Symbol = "III" }, Note = new Note() { Name = "B", Position = 4 } },
+                        new ChordNote() { Interval = new Interval() { Name = "5th", FullName = "Perfect Fifth", SemiTones = 7, Symbol = "V" }, Note = new Note() { Name = "D", Position = 7 } },
+                        new ChordNote() { Interval = new Interval() { Name = "b 7th", FullName = "Minor Seventh", SemiTones = 10, Symbol = "vii" }, Note = new Note() { Name = "F", Position = 10 } }
                     }
                 },
                 new Chord()
@@ -275,10 +275,10 @@ namespace MusicServices.StaticData
                     Name = "Major Harmony 6", RootNoteName = "A", ChordType = "Minor Seventh",
                     ChordNotes = new List<ChordNote>()
                     {
-                        new ChordNote() { Interval = new Interval() { Name = "1st", FullName = "Unison", SemiTones = 0, Symbol = "I" }, Note = new Note() { Name = "A", Position = 10 } },
-                        new ChordNote() { Interval = new Interval() { Name = "b 3rd", FullName = "Minor Third", SemiTones = 3, Symbol = "iii" }, Note = new Note() { Name = "C", Position = 1 } },
-                        new ChordNote() { Interval = new Interval() { Name = "5th", FullName = "Perfect Fifth", SemiTones = 7, Symbol = "V" }, Note = new Note() { Name = "E", Position = 5 } },
-                        new ChordNote() { Interval = new Interval() { Name = "b 7th", FullName = "Minor Seventh", SemiTones = 10, Symbol = "vii" }, Note = new Note() { Name = "G", Position = 8 } }
+                        new ChordNote() { Interval = new Interval() { Name = "1st", FullName = "Unison", SemiTones = 0, Symbol = "I" }, Note = new Note() { Name = "A", Position = 0 } },
+                        new ChordNote() { Interval = new Interval() { Name = "b 3rd", FullName = "Minor Third", SemiTones = 3, Symbol = "iii" }, Note = new Note() { Name = "C", Position = 3 } },
+                        new ChordNote() { Interval = new Interval() { Name = "5th", FullName = "Perfect Fifth", SemiTones = 7, Symbol = "V" }, Note = new Note() { Name = "E", Position = 7 } },
+                        new ChordNote() { Interval = new Interval() { Name = "b 7th", FullName = "Minor Seventh", SemiTones = 10, Symbol = "vii" }, Note = new Note() { Name = "G", Position = 10 } }
                     }
                 },
                 new Chord()
@@ -304,10 +304,10 @@ namespace MusicServices.StaticData
                     Name = "Minor Harmony 1", RootNoteName = "G", ChordType = "Minor Seventh",
                     ChordNotes = new List<ChordNote>()
                     {
-                        new ChordNote() { Interval = new Interval() { Name = "1st", FullName = "Unison", SemiTones = 0, Symbol = "I" }, Note = new Note() { Name = "G", Position = 2 } },
-                        new ChordNote() { Interval = new Interval() { Name = "b 3rd", FullName = "Minor Third", SemiTones = 3, Symbol = "iii" }, Note = new Note() { Name = "A# / Bb", Position = 5 } },
-                        new ChordNote() { Interval = new Interval() { Name = "5th", FullName = "Perfect Fifth", SemiTones = 7, Symbol = "V" }, Note = new Note() { Name = "D", Position = 9 } },
-                        new ChordNote() { Interval = new Interval() { Name = "b 7th", FullName = "Minor Seventh", SemiTones = 10, Symbol = "b7" }, Note = new Note() { Name = "F", Position = 0 } }
+                        new ChordNote() { Interval = new Interval() { Name = "1st", FullName = "Unison", SemiTones = 0, Symbol = "I" }, Note = new Note() { Name = "G", Position = 0 } },
+                        new ChordNote() { Interval = new Interval() { Name = "b 3rd", FullName = "Minor Third", SemiTones = 3, Symbol = "iii" }, Note = new Note() { Name = "A# / Bb", Position = 3 } },
+                        new ChordNote() { Interval = new Interval() { Name = "5th", FullName = "Perfect Fifth", SemiTones = 7, Symbol = "V" }, Note = new Note() { Name = "D", Position = 7 } },
+                        new ChordNote() { Interval = new Interval() { Name = "b 7th", FullName = "Minor Seventh", SemiTones = 10, Symbol = "b7" }, Note = new Note() { Name = "F", Position = 10 } }
                     }
                 },
                 new Chord()
@@ -315,10 +315,10 @@ namespace MusicServices.StaticData
                     Name = "Minor Harmony 2", RootNoteName = "A", ChordType = "Minor Seven Flat Five",
                     ChordNotes = new List<ChordNote>()
                     {
-                        new ChordNote() { Interval = new Interval() { Name = "1st", FullName = "Unison", SemiTones = 0, Symbol = "I" }, Note = new Note() { Name = "A", Position = 4 } },
-                        new ChordNote() { Interval = new Interval() { Name = "b 3rd", FullName = "Minor Third", SemiTones = 3, Symbol = "iii" }, Note = new Note() { Name = "C", Position = 7 } },
-                        new ChordNote() { Interval = new Interval() { Name = "# 4th / b 5th", FullName = "Augmented Fourth / Diminished Fifth", SemiTones = 6, Symbol = "IV + / V °" }, Note = new Note() { Name = "D# / Eb", Position = 10 } },
-                        new ChordNote() { Interval = new Interval() { Name = "b 7th", FullName = "Minor Seventh", SemiTones = 10, Symbol = "vii" }, Note = new Note() { Name = "G", Position = 2 } }
+                        new ChordNote() { Interval = new Interval() { Name = "1st", FullName = "Unison", SemiTones = 0, Symbol = "I" }, Note = new Note() { Name = "A", Position = 0 } },
+                        new ChordNote() { Interval = new Interval() { Name = "b 3rd", FullName = "Minor Third", SemiTones = 3, Symbol = "iii" }, Note = new Note() { Name = "C", Position = 3 } },
+                        new ChordNote() { Interval = new Interval() { Name = "# 4th / b 5th", FullName = "Augmented Fourth / Diminished Fifth", SemiTones = 6, Symbol = "IV + / V °" }, Note = new Note() { Name = "D# / Eb", Position = 6 } },
+                        new ChordNote() { Interval = new Interval() { Name = "b 7th", FullName = "Minor Seventh", SemiTones = 10, Symbol = "vii" }, Note = new Note() { Name = "G", Position = 10 } }
                     }
                 },
                 new Chord()
@@ -326,10 +326,10 @@ namespace MusicServices.StaticData
                     Name = "Minor Harmony 3", RootNoteName = "A# / Bb", ChordType = "Major Seventh",
                     ChordNotes = new List<ChordNote>()
                     {
-                        new ChordNote() { Interval = new Interval() { Name = "1st", FullName = "Unison", SemiTones = 0, Symbol = "I" }, Note = new Note() { Name = "A# / Bb", Position = 5 } },
-                        new ChordNote() { Interval = new Interval() { Name = "3rd", FullName = "Major Third", SemiTones = 4, Symbol = "III" }, Note = new Note() { Name = "D", Position = 9 } },
-                        new ChordNote() { Interval = new Interval() { Name = "5th", FullName = "Perfect Fifth", SemiTones = 7, Symbol = "V" }, Note = new Note() { Name = "F", Position = 0 } },
-                        new ChordNote() { Interval = new Interval() { Name = "7th", FullName = "Major Seventh", SemiTones = 11, Symbol = "VII" }, Note = new Note() { Name = "A", Position = 4 } }
+                        new ChordNote() { Interval = new Interval() { Name = "1st", FullName = "Unison", SemiTones = 0, Symbol = "I" }, Note = new Note() { Name = "A# / Bb", Position = 0 } },
+                        new ChordNote() { Interval = new Interval() { Name = "3rd", FullName = "Major Third", SemiTones = 4, Symbol = "III" }, Note = new Note() { Name = "D", Position = 4 } },
+                        new ChordNote() { Interval = new Interval() { Name = "5th", FullName = "Perfect Fifth", SemiTones = 7, Symbol = "V" }, Note = new Note() { Name = "F", Position = 7 } },
+                        new ChordNote() { Interval = new Interval() { Name = "7th", FullName = "Major Seventh", SemiTones = 11, Symbol = "VII" }, Note = new Note() { Name = "A", Position = 11 } }
                     }
                 },
                 new Chord()
@@ -337,10 +337,10 @@ namespace MusicServices.StaticData
                     Name = "Minor Harmony 4", RootNoteName = "C", ChordType = "Minor Seventh",
                     ChordNotes = new List<ChordNote>()
                     {
-                        new ChordNote() { Interval = new Interval() { Name = "1st", FullName = "Unison", SemiTones = 0, Symbol = "I" }, Note = new Note() { Name = "C", Position = 7 } },
-                        new ChordNote() { Interval = new Interval() { Name = "b 3rd", FullName = "Minor Third", SemiTones = 3, Symbol = "iii" }, Note = new Note() { Name = "D# / Eb", Position = 10 } },
-                        new ChordNote() { Interval = new Interval() { Name = "5th", FullName = "Perfect Fifth", SemiTones = 7, Symbol = "V" }, Note = new Note() { Name = "G", Position = 2 } },
-                        new ChordNote() { Interval = new Interval() { Name = "b 7th", FullName = "Minor Seventh", SemiTones = 10, Symbol = "vii" }, Note = new Note() { Name = "A# / Bb", Position = 5 } }
+                        new ChordNote() { Interval = new Interval() { Name = "1st", FullName = "Unison", SemiTones = 0, Symbol = "I" }, Note = new Note() { Name = "C", Position = 0 } },
+                        new ChordNote() { Interval = new Interval() { Name = "b 3rd", FullName = "Minor Third", SemiTones = 3, Symbol = "iii" }, Note = new Note() { Name = "D# / Eb", Position = 3 } },
+                        new ChordNote() { Interval = new Interval() { Name = "5th", FullName = "Perfect Fifth", SemiTones = 7, Symbol = "V" }, Note = new Note() { Name = "G", Position = 7 } },
+                        new ChordNote() { Interval = new Interval() { Name = "b 7th", FullName = "Minor Seventh", SemiTones = 10, Symbol = "vii" }, Note = new Note() { Name = "A# / Bb", Position = 10 } }
                     }
                 },
                 new Chord()
@@ -348,10 +348,10 @@ namespace MusicServices.StaticData
                     Name = "Minor Harmony 5", RootNoteName = "D", ChordType = "Minor Seventh",
                     ChordNotes = new List<ChordNote>()
                     {
-                        new ChordNote() { Interval = new Interval() { Name = "1st", FullName = "Unison", SemiTones = 0, Symbol = "I" }, Note = new Note() { Name = "D", Position = 9 } },
-                        new ChordNote() { Interval = new Interval() { Name = "b 3rd", FullName = "Minor Third", SemiTones = 3, Symbol = "iii" }, Note = new Note() { Name = "F", Position = 0 } },
-                        new ChordNote() { Interval = new Interval() { Name = "5th", FullName = "Perfect Fifth", SemiTones = 7, Symbol = "V" }, Note = new Note() { Name = "A", Position = 4 } },
-                        new ChordNote() { Interval = new Interval() { Name = "b 7th", FullName = "Minor Seventh", SemiTones = 10, Symbol = "vii" }, Note = new Note() { Name = "C", Position = 7 } }
+                        new ChordNote() { Interval = new Interval() { Name = "1st", FullName = "Unison", SemiTones = 0, Symbol = "I" }, Note = new Note() { Name = "D", Position = 0 } },
+                        new ChordNote() { Interval = new Interval() { Name = "b 3rd", FullName = "Minor Third", SemiTones = 3, Symbol = "iii" }, Note = new Note() { Name = "F", Position = 3 } },
+                        new ChordNote() { Interval = new Interval() { Name = "5th", FullName = "Perfect Fifth", SemiTones = 7, Symbol = "V" }, Note = new Note() { Name = "A", Position = 7 } },
+                        new ChordNote() { Interval = new Interval() { Name = "b 7th", FullName = "Minor Seventh", SemiTones = 10, Symbol = "vii" }, Note = new Note() { Name = "C", Position = 10 } }
                     }
                 },
                 new Chord()
@@ -359,10 +359,10 @@ namespace MusicServices.StaticData
                     Name = "Minor Harmony 6", RootNoteName = "D# / Eb", ChordType = "Major Seventh",
                     ChordNotes = new List<ChordNote>()
                     {
-                        new ChordNote() { Interval = new Interval() { Name = "1st", FullName = "Unison", SemiTones = 0, Symbol = "I" }, Note = new Note() { Name = "D# / Eb", Position = 10 } },
-                        new ChordNote() { Interval = new Interval() { Name = "3rd", FullName = "Major Third", SemiTones = 4, Symbol = "III" }, Note = new Note() { Name = "G", Position = 2 } },
-                        new ChordNote() { Interval = new Interval() { Name = "5th", FullName = "Perfect Fifth", SemiTones = 7, Symbol = "V" }, Note = new Note() { Name = "A# / Bb", Position = 5 } },
-                        new ChordNote() { Interval = new Interval() { Name = "7th", FullName = "Major Seventh", SemiTones = 11, Symbol = "VII" }, Note = new Note() { Name = "D", Position = 9 } }
+                        new ChordNote() { Interval = new Interval() { Name = "1st", FullName = "Unison", SemiTones = 0, Symbol = "I" }, Note = new Note() { Name = "D# / Eb", Position = 0 } },
+                        new ChordNote() { Interval = new Interval() { Name = "3rd", FullName = "Major Third", SemiTones = 4, Symbol = "III" }, Note = new Note() { Name = "G", Position = 4 } },
+                        new ChordNote() { Interval = new Interval() { Name = "5th", FullName = "Perfect Fifth", SemiTones = 7, Symbol = "V" }, Note = new Note() { Name = "A# / Bb", Position = 7 } },
+                        new ChordNote() { Interval = new Interval() { Name = "7th", FullName = "Major Seventh", SemiTones = 11, Symbol = "VII" }, Note = new Note() { Name = "D", Position = 11 } }
                     }
                 },
                 new Chord()
