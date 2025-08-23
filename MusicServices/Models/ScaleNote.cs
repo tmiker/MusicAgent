@@ -8,7 +8,7 @@
         public int CompareTo(ScaleNote? other)
         {
             if (other is null) return 1;
-            int intervalComparison = Interval.CompareTo(other.Interval);
+            int intervalComparison = Interval.Name.CompareTo(other.Interval.Name);   // for brevity since immutable vs comparing entire object
             if (intervalComparison != 0) return intervalComparison;
             return Note.CompareTo(other.Note);
         }
