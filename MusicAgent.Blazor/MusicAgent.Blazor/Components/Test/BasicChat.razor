@@ -1,0 +1,214 @@
+﻿@page "/test/basicChat"
+@rendermode InteractiveServer
+@using Microsoft.SemanticKernel
+@using Microsoft.SemanticKernel.ChatCompletion
+@using Microsoft.SemanticKernel.Connectors.OpenAI
+@using MusicAgent.Blazor.Abstractions
+@using MusicAgent.Blazor.Client.Abstractions
+@using MusicAgent.Blazor.Configuration
+@using MusicAgent.Blazor.SemanticKernel.ProviderDTOs
+@using MusicAgent.Blazor.SemanticKernel.ProviderServices
+
+<PageTitle>Basic Chat</PageTitle>
+
+@* <h3>Basic Chat</h3> *@
+
+<div class="row mt-2">
+    <div class="col-4">
+        @if (_thinking)
+        {
+            <p class="text-yellow-alt"><i>Thinking ...</i></p>
+        }
+        else if (_loadingConfiguration)
+        {
+            <p class="text-yellow-alt"><i>Loading Basic Chat Model Info ...</i></p>
+        }
+        else
+        {
+            if (_chatHistory is null)
+            {
+                <btn class="btn button-custom-primary form-control" @onclick="InitializeChat">Initialize Basic Chat</btn>
+            }
+            else
+            {
+                <btn class="btn button-custom-primary form-control" @onclick="InitializeChat">Re-Initialize Basic Chat</btn>
+            }
+        }
+    </div>
+    <div class="col-7 offset-1">
+        @if (!string.IsNullOrWhiteSpace(_modelInfo))
+        {
+            <p class="text-yellow-alt mt-3">Model Info: @_modelInfo</p>
+        }
+    </div> 
+</div>
+
+@if (_chatHistory is not null)
+{
+    <div class="row mt-2">
+        <label for="userMessage" class="form-label">Your Message:</label>
+        <textarea rows="4" class="bg-dark text-light form-control" id="userMessage" @bind="_userMessage" />
+    </div>
+
+    <div class="row mt-2">
+        <div class="col-4 offset-4">
+            <btn class="btn button-custom-success form-control" @onclick="SubmitUserMessage">Submit</btn>
+        </div>
+    </div>
+}
+
+@if (_messageHistoryList is not null)
+{
+    <div class="row mt-2">
+        <label for="historyList" class="form-label">History:</label>
+        <textarea rows="10" class="bg-dark text-light form-control" id="historyList" @bind="_messageHistoryList" />
+    </div>
+}
+
+@code {
+
+    [Inject]
+    private Kernel _kernel { get; set; }
+    [Inject]
+    private IToastrService _toastr { get; set; }
+    [Inject]
+    private ILMStudioHttpProvider _lmStudioHttpProvider { get; set; }
+    [Inject]
+    private IOllamaHttpProvider _ollamaHttpProvider { get; set; }
+
+    [CascadingParameter(Name = "SemanticKernelInfo")]      // Root level cascading parameter
+    private SemanticKernelInfo? _kernelInfo { get; set; }
+
+    private string? _kernelInfoModelProvider;
+    private string? _modelInfo;
+
+    private OpenAIPromptExecutionSettings? _promptExecutionSettings;
+    private ChatHistory? _chatHistory;
+    private string _userMessage;    // = string.Empty;
+    private IChatCompletionService? _chatService;
+    private string _messageHistoryList; // = string.Empty;
+    private bool _loadingConfiguration = true;
+    private bool _thinking = false;
+    private string? _errorMessage;
+
+    private void InitializeChat()
+    {
+        _promptExecutionSettings = new()
+        {
+            MaxTokens = 200,
+            Temperature = 0.7,
+            TopP = 0.95,
+            FrequencyPenalty = 0,
+            PresencePenalty = 0,
+            ToolCallBehavior = ToolCallBehavior.AutoInvokeKernelFunctions
+        };
+        _chatHistory = new ChatHistory();
+        _chatHistory.AddSystemMessage("You are a helpful assistant!");
+        _userMessage = string.Empty;
+        _messageHistoryList = string.Empty;
+    }
+
+    private async Task SubmitUserMessage()
+    {
+        if (!string.IsNullOrWhiteSpace(_userMessage))
+        {
+            _thinking = true;
+            _chatHistory!.AddUserMessage(_userMessage);
+            _messageHistoryList += $"User: {_userMessage}\n";
+
+            ChatMessageContent assistantContent = await _chatService!.GetChatMessageContentAsync(_chatHistory!, _promptExecutionSettings, _kernel);
+
+            _messageHistoryList += ($"{assistantContent.Content}\n\n");
+            if (assistantContent.Content is not null) _chatHistory.AddAssistantMessage(assistantContent.Content);
+            _userMessage = string.Empty;
+
+            // string streamingAssistantContent = string.Empty;
+            // _chatHistory.AddAssistantMessage(assistantContent.Content!);
+            // _messageHistoryList += $"Assistant: {assistantContent.Content}\n\n";
+            // await foreach (StreamingChatMessageContent chunk in _chatService!.GetStreamingChatMessageContentsAsync(_chatHistory, _promptExecutionSettings, _kernel))
+            // {
+            //     _messageHistoryList += chunk.Content;
+            // }
+            // _messageHistoryList += $"\n\n";
+            //_chatHistory.AddAssistantMessage(streamingAssistantContent);
+
+            _thinking = false;
+        }
+        else await _toastr.ShowToastrError("Please enter a message.");
+    }
+
+    private async Task GetLMStudioLoadedModelList()
+    {
+        var result = await _lmStudioHttpProvider.GetLMStudioLoadedModelsAsync();
+        if (result.IsSuccess)
+        {
+            List<LMStudioModelDTO>? loadedModels = result.LoadedModels?.ToList();
+            if (loadedModels is not null && loadedModels.Any())
+            {
+                LMStudioModelDTO? loaded = loadedModels.FirstOrDefault(m => m.State == "loaded");
+                if (loaded is not null)
+                {
+                    _modelInfo = ($"Loaded Model ID: {loaded.Id}, Type: {loaded.Type}, Publisher: {loaded.Publisher}, State: {loaded.State}");
+                }
+                else
+                {
+                    _modelInfo = $"An LM Studio model was not found.";
+                    await _toastr.ShowToastrError("Please check LM Studio configuration.");
+                }
+            }
+        }
+        else _errorMessage = result.ErrorMessage;
+    }
+
+    private async Task GetOllamaLoadedModelList()
+    {
+        // NOTE the list of models is not updated based on actual loaded models as not loading more than one model - only selected model is updated
+        var result = await _ollamaHttpProvider.GetOllamaLoadedModelsAsync();
+        if (result.IsSuccess)
+        {
+            List<OllamaModelDTO>? loadedModels = result.LoadedModels?.ToList();
+            if (loadedModels is not null && loadedModels.Any())
+            {
+                OllamaModelDTO? loaded = loadedModels.FirstOrDefault();
+                if (loaded is not null)
+                {
+                    _modelInfo = ($"Loaded Model ID: {loaded.Model}");
+                }
+                else
+                {
+                    _modelInfo = $"An Ollama model was not found.";
+                    await _toastr.ShowToastrError("Please check Ollama configuration. It may take a moment for the model query to respond.");
+                }
+            }
+        }
+        else _errorMessage = result.ErrorMessage;
+    }
+
+    // protected override async Task OnParametersSetAsync()
+    // {
+    //     if (_kernelInfoModelProvider == "LMStudio") await GetLMStudioLoadedModelList();
+    //     else if (_kernelInfoModelProvider == "Ollama") await GetOllamaLoadedModelList();
+    //     _loadingConfiguration = false;
+    // }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            if (_kernelInfoModelProvider == "LMStudio") await GetLMStudioLoadedModelList();
+            else if (_kernelInfoModelProvider == "Ollama") await GetOllamaLoadedModelList();
+            _loadingConfiguration = false;
+            StateHasChanged();
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        // _loadingConfiguration = true;
+        _chatService = _kernel.GetRequiredService<IChatCompletionService>();
+        if (_kernelInfo is not null) _kernelInfoModelProvider = _kernelInfo.ModelProvider;
+    }
+
+
+
+}

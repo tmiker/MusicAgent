@@ -9,6 +9,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicServices.Test.Unit", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicAgent.Console", "MusicAgent.Console\MusicAgent.Console.csproj", "{A3E53FC5-D8B9-4783-9629-EC99EEFD1249}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicAgent.Blazor", "MusicAgent.Blazor\MusicAgent.Blazor\MusicAgent.Blazor.csproj", "{D12D3C2D-B4F3-491F-A121-11D7D38276F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicAgent.Blazor.Client", "MusicAgent.Blazor\MusicAgent.Blazor.Client\MusicAgent.Blazor.Client.csproj", "{D64FC766-0400-4CF7-A311-1A0A047FB90B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notes", "Notes", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		configuration.txt = configuration.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +36,14 @@ Global
 		{A3E53FC5-D8B9-4783-9629-EC99EEFD1249}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3E53FC5-D8B9-4783-9629-EC99EEFD1249}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3E53FC5-D8B9-4783-9629-EC99EEFD1249}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D12D3C2D-B4F3-491F-A121-11D7D38276F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D12D3C2D-B4F3-491F-A121-11D7D38276F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D12D3C2D-B4F3-491F-A121-11D7D38276F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D12D3C2D-B4F3-491F-A121-11D7D38276F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D64FC766-0400-4CF7-A311-1A0A047FB90B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D64FC766-0400-4CF7-A311-1A0A047FB90B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D64FC766-0400-4CF7-A311-1A0A047FB90B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D64FC766-0400-4CF7-A311-1A0A047FB90B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

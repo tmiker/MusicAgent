@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+	  <NoWarn>$(NoWarn);CS8618,IDE0009,CA1051,CA1050,CA1707,CA1054,CA2007,VSTHRD111,CS1591,RCS1110,RCS1243,CA5394,SKEXP0001,SKEXP0010,SKEXP0020,SKEXP0040,SKEXP0050,SKEXP0060,SKEXP0070,SKEXP0101,SKEXP0110</NoWarn>
+	  <UserSecretsId>24963d49-2f6d-4a7e-a6ac-7285392e7952</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\MusicServices\MusicServices.csproj" />
+    <ProjectReference Include="..\MusicAgent.Blazor.Client\MusicAgent.Blazor.Client.csproj" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="9.0.8" />
+    <PackageReference Include="Microsoft.SemanticKernel" Version="1.63.0" />
+  </ItemGroup>
+
+</Project>
