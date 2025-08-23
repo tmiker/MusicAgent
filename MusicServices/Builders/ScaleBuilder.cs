@@ -34,7 +34,7 @@ namespace MusicServices.Builders
             {
                 position += scaleSignature[i];
                 MusicNode? node = wheel.GetNodeAtSemitoneInterval(wheel.First!, position);
-                if (node?.Interval is not null && node.Note is not null) scale.ScaleNotes.Add(new ScaleNote() { Interval = node.Interval, Note = node.Note });
+                if (node?.Interval is not null && node.Note is not null) scale.ScaleNotes.Add(new NoteInterval() { Interval = node.Interval, Note = node.Note.Clone() });
             }
 
             return scale;

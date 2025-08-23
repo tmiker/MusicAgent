@@ -8,7 +8,7 @@ namespace MusicServices.Models
         public string Name { get; set; } = default!;
         public string RootNoteName { get; set; } = default!;
         public string ChordType { get; set; } = default!;
-        public List<ChordNote> ChordNotes { get; set; } = new List<ChordNote>();
+        public List<NoteInterval> ChordNotes { get; set; } = new List<NoteInterval>();
 
         public override string ToString()
         {

@@ -35,6 +35,13 @@ namespace MusicServices.DataStructures
             Console.WriteLine($"Wheel successfully initialized with Root Note {rootNoteName} in {sw.ElapsedMilliseconds} ms at {DateTime.Now}.");
         }
 
+        public NoteInterval? GetNoteInterval(MusicNode node)
+        {
+            // When adding a NoteInterval to a harmonized scale chord, the position of the note is mutable so need to clone it (has no reference type properties)
+            if (node is null) return null;
+            return new NoteInterval() { Interval = node.Interval, Note = node.Note.Clone() };
+        }
+
         private void AddNode(MusicNode node)
         {
             if (First is null) First = node;

@@ -7,7 +7,7 @@ namespace MusicServices.Models
         public string Name { get; set; } = default!;
         public string RootNoteName { get; set; } = default!;
         public string ScaleType { get; set; } = default!;
-        public List<ScaleNote> ScaleNotes { get; set; } = new List<ScaleNote>();
+        public List<NoteInterval> ScaleNotes { get; set; } = new List<NoteInterval>();
 
         public override string ToString()
         {

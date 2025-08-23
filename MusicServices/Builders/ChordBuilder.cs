@@ -33,7 +33,7 @@ namespace MusicServices.Builders
             {
                 position += chordSignature[i];
                 MusicNode? node = wheel.GetNodeAtSemitoneInterval(wheel.First!, position);
-                if (node is not null) chord.ChordNotes.Add(new ChordNote() { Interval = node.Interval, Note = node.Note });
+                if (node is not null) chord.ChordNotes.Add(new NoteInterval() { Interval = node.Interval, Note = node.Note.Clone() });
             }
 
             return chord;
@@ -51,8 +51,8 @@ namespace MusicServices.Builders
             {
                 position += chordSignature[i];
                 MusicNode? node = wheel.GetNodeAtSemitoneInterval(wheel.First!, position);
-                if (node is not null) chord.ChordNotes.Add(new ChordNote() { Interval = node.Interval, Note = node.Note });
-                Console.WriteLine($" --- ChordBuilder.CreateChordFromSignature: Added ChordNote with note name {node?.Note.Name} as interval {node.Interval.Symbol}");
+                if (node is not null) chord.ChordNotes.Add(new NoteInterval() { Interval = node.Interval, Note = node.Note.Clone() });
+                Console.WriteLine($" --- ChordBuilder.CreateChordFromSignature: Added ChordNote with note name {node?.Note.Name} as interval {node?.Interval.Symbol}");
             }
 
             return chord;

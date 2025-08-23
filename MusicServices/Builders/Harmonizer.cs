@@ -50,8 +50,13 @@ namespace MusicServices.Builders
 
             // initailize first chord and add first chord note which is the chord root
             Chord chord = new Chord() { RootNoteName = currentNode.Note.Name };
-            chord.ChordNotes.Add(new ChordNote() { Interval = currentNode.Interval, Note = currentNode.Note.Clone() }); // NEED TO CLONE NOTE HERE TO KEEP POSITION VALUE PER CHORDNOTE
-            // chord.ChordNotes.Add(new ChordNote() { Interval = currentNode.Interval, Note = currentNode.Note }); // NEED TO CLONE NOTE HERE TO KEEP POSITION VALUE PER CHORDNOTE
+
+            //// UPDATE HERE
+            NoteInterval rootNoteInterval = wheel.GetNoteInterval(currentNode)!; // WILL CLONE NOTE HERE TO KEEP POSITION VALUE PER NOTEINTERVAL
+            chord.ChordNotes.Add(rootNoteInterval);
+            //// REPLACES
+            // chord.ChordNotes.Add(new NoteInterval() { Interval = currentNode.Interval, Note = currentNode.Note.Clone() }); // NEED TO CLONE NOTE HERE TO KEEP POSITION VALUE PER CHORDNOTE
+
             Console.WriteLine($"Added chord to harmony with Root Note {currentNode.Note.Name} at Position {currentNode.Note.Position}.");
             // add 3 more chord notes by stacking thirds for which the note is in the scale
             for (int i = 0; i < 3; i++)
@@ -61,8 +66,11 @@ namespace MusicServices.Builders
                 if (nextThird is null || !scaleNotes.Contains(nextThird.Note.Name)) nextThird = wheel.GetNextMajorThird(currentNode);
                 if (nextThird is null || !scaleNotes.Contains(nextThird.Note.Name)) throw new InvalidDataException($"Attempting to Harmonize a scale that is not diatonic.");
 
-                // chord.ChordNotes.Add(new ChordNote() { Interval = nextThird.Interval, Note = nextThird.Note }); // NEED TO CLONE NOTE HERE TO KEEP POSITION VALUE PER CHORDNOTE
-                chord.ChordNotes.Add(new ChordNote() { Interval = nextThird.Interval, Note = nextThird.Note.Clone() }); // NEED TO CLONE NOTE HERE TO KEEP POSITION VALUE PER CHORDNOTE
+                //// UPDATE HERE
+                NoteInterval nextThirdInterval = wheel.GetNoteInterval(nextThird)!; // WILL CLONE NOTE HERE TO KEEP POSITION VALUE PER NOTEINTERVAL
+                chord.ChordNotes.Add(nextThirdInterval);
+                //// REPLACES
+                // chord.ChordNotes.Add(new NoteInterval() { Interval = nextThird.Interval, Note = nextThird.Note.Clone() }); // NEED TO CLONE NOTE HERE TO KEEP POSITION VALUE PER CHORDNOTE
 
                 currentNode = nextThird;
             }
@@ -103,7 +111,7 @@ namespace MusicServices.Builders
             {
                 position += chordSignature[i];
                 MusicNode? node = wheel.GetNodeAtSemitoneInterval(wheel.First!, position);
-                if (node is not null) chord.ChordNotes.Add(new ChordNote() { Interval = node.Interval, Note = node.Note });
+                if (node is not null) chord.ChordNotes.Add(new NoteInterval() { Interval = node.Interval, Note = node.Note.Clone() });
             }
             return chord;
         }

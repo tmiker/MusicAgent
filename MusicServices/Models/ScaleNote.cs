@@ -1,5 +1,6 @@
 ﻿namespace MusicServices.Models
 {
+    // REPLACED WITH NOTEINTERVAL
     public class ScaleNote : IComparable<ScaleNote>, IEquatable<ScaleNote>
     {
         public Interval Interval { get; set; } = default!;
