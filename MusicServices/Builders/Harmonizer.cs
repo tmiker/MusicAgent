@@ -52,8 +52,9 @@ namespace MusicServices.Builders
             Chord chord = new Chord() { RootNoteName = currentNode.Note.Name };
 
             //// UPDATE HERE
-            NoteInterval rootNoteInterval = wheel.GetNoteInterval(currentNode)!; // WILL CLONE NOTE HERE TO KEEP POSITION VALUE PER NOTEINTERVAL
-            chord.ChordNotes.Add(rootNoteInterval);
+            // NoteInterval rootNoteInterval = wheel.GetNoteInterval(currentNode)!; // WILL CLONE NOTE HERE TO KEEP POSITION VALUE PER NOTEINTERVAL
+            // chord.ChordNotes.Add(rootNoteInterval);
+            chord.ChordNotes.Add(wheel.GetNoteInterval(currentNode));
             //// REPLACES
             // chord.ChordNotes.Add(new NoteInterval() { Interval = currentNode.Interval, Note = currentNode.Note.Clone() }); // NEED TO CLONE NOTE HERE TO KEEP POSITION VALUE PER CHORDNOTE
 
@@ -67,8 +68,10 @@ namespace MusicServices.Builders
                 if (nextThird is null || !scaleNotes.Contains(nextThird.Note.Name)) throw new InvalidDataException($"Attempting to Harmonize a scale that is not diatonic.");
 
                 //// UPDATE HERE
-                NoteInterval nextThirdInterval = wheel.GetNoteInterval(nextThird)!; // WILL CLONE NOTE HERE TO KEEP POSITION VALUE PER NOTEINTERVAL
-                chord.ChordNotes.Add(nextThirdInterval);
+                // NoteInterval nextThirdInterval = wheel.GetNoteInterval(nextThird)!; // WILL CLONE NOTE HERE TO KEEP POSITION VALUE PER NOTEINTERVAL
+                // chord.ChordNotes.Add(nextThirdInterval);
+                chord.ChordNotes.Add(wheel.GetNoteInterval(nextThird));
+
                 //// REPLACES
                 // chord.ChordNotes.Add(new NoteInterval() { Interval = nextThird.Interval, Note = nextThird.Note.Clone() }); // NEED TO CLONE NOTE HERE TO KEEP POSITION VALUE PER CHORDNOTE
 

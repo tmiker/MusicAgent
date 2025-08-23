@@ -19,7 +19,7 @@
         }
         public override bool Equals(object? obj)
         {
-            if (obj is ChordNote chordNote)
+            if (obj is NoteInterval chordNote)
             {
                 return Equals(chordNote);
             }
