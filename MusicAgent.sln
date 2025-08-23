@@ -18,6 +18,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notes", "Notes", "{02EA681E
 		configuration.txt = configuration.txt
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{64E891DA-332B-442B-912E-C6141A51C09E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{EF70966D-E9DA-4722-9F1A-BEA788FB4E6D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2A17897E-1519-42C9-A203-DC53488899F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +53,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{50378344-A65C-4909-9481-CB66D9ABC1C6} = {EF70966D-E9DA-4722-9F1A-BEA788FB4E6D}
+		{E911C67C-E75E-437F-9A0C-7C2F85A6479E} = {2A17897E-1519-42C9-A203-DC53488899F9}
+		{A3E53FC5-D8B9-4783-9629-EC99EEFD1249} = {64E891DA-332B-442B-912E-C6141A51C09E}
+		{D12D3C2D-B4F3-491F-A121-11D7D38276F3} = {64E891DA-332B-442B-912E-C6141A51C09E}
+		{D64FC766-0400-4CF7-A311-1A0A047FB90B} = {64E891DA-332B-442B-912E-C6141A51C09E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {90B4D804-7C4D-4522-B059-1B298178306A}
